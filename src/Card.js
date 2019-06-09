@@ -35,7 +35,6 @@ class Card extends Component {
                     this.setState({
                         playStyle: {backgroundImage: "url(/img/icon_play.png)"}
                     })
-                    // change button attr
                 }
             })
         })
@@ -96,8 +95,8 @@ class Card extends Component {
 
     render() {
         return (
-        <div id="1" class="card-container">
-            <div onMouseEnter={this.cardOnEnter} onMouseLeave={this.cardOnLeave} style={this.state.myCardStyle} ref={this.myCard} id="1" song="spotify" class={this.state.myCardClass}>
+        <div class="card-container">
+            <div onMouseEnter={this.cardOnEnter} onMouseLeave={this.cardOnLeave} style={this.state.myCardStyle} ref={this.myCard} song="spotify" class={this.state.myCardClass}>
                 <p style={this.state.childrenStyle} class="name">Song name</p>
                 <p style={this.state.childrenStyle} class="artist">Song artist</p>
                 <a style={this.state.plusStyle} class="buttonCard plusCard"></a>
