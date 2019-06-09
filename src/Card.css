@@ -1,0 +1,163 @@
+.card-container {
+    position: relative;
+}
+
+.my-card {
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+    position: relative;
+    background-size: 250px 250px;
+}
+
+.dark:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.buttonCard {
+    box-sizing: content-box !important;
+    position: fixed;
+    visibility: hidden;
+    border-radius: 50%;
+    text-align: center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: 50% center;
+    transform-origin: center center;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    font-size: 14px;
+    line-height: 120%;
+    color: #FFF;
+    background-color: transparent;
+    top: 10px;
+    
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color ease 400ms;
+    transition: border ease 1ms;
+    transition: transform ease 400ms;
+}
+
+    .buttonCard:hover {
+        color: #FFF;
+        transform: scale(1.1);
+    }
+
+.playCard {
+    margin-left: 40%;
+    margin-top: 35%;
+    background-image: url('/src/elements/icon_play.png');
+    border: 1px solid #FFF;
+    padding: 12px 12px;
+}
+
+    .playCard:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1.7px solid #FFF;
+    }
+
+.plusCard {
+    margin-left: 12%;
+    margin-top: 40%;
+    background-image: url('/src/elements/icon_plus.png');
+}
+
+.dotsCard {
+    margin-left: 80%;
+    margin-top: 40%;
+    background-image: url('/src/elements/icon_dots.png');
+}
+
+.name {
+    text-align: center;
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    visibility: hidden;
+    font-family: 'Oswald', sans-serif;
+    top: 2px;
+}
+
+.artist {
+    text-align: center;
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    margin-top: 50px;
+    visibility: hidden;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+    #toggle.on + #menu {
+        opacity: 1;
+        visibility: visible;
+    }
+
+/* menu appearance*/
+#menu {
+    position: absolute;
+    margin-top: 147px;
+    left: 67%;
+    color: white;
+    width: 70px;
+    padding: 10px;
+    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+    text-align: center;
+    border-radius: 4px;
+    background: white;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+    /* just for this demo */
+    visibility: hidden;
+    box-sizing: content-box;
+}
+
+    #menu:after {
+        position: absolute;
+        top: -15px;
+        left: 35px;
+        content: "";
+        display: block;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 20px solid white;
+    }
+
+ul, li, li a {
+    list-style: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+    li a {
+        padding: 5px;
+        color: #888;
+        text-decoration: none!important;
+    }
+
+    a:link, a:visited, a:hover, a:active {
+        text-decoration: none;
+    }
+
+        li a:hover,
+        li a:focus {
+            background: rgb(60, 65, 64);
+            color: #fff;
+        }
