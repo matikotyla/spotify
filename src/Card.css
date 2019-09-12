@@ -1,163 +1,123 @@
-.card-container {
-    position: relative;
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-.my-card {
-    margin-left: 20px;
-    margin-top: 20px;
+.card-container {
     width: 250px;
     height: 250px;
+    background-size: cover;
+    margin-top: 20px;
+    margin-left: 10px;
     cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card-content {
     position: relative;
-    background-size: 250px 250px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-.dark:before {
-    content: '';
+.card-song-name {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: block;
-    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+    left: 50%;
+    top: 10px;
+    font-size: 24px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    transform: translate(-50%);
 }
 
-.buttonCard {
-    box-sizing: content-box !important;
-    position: fixed;
-    visibility: hidden;
+.card-song-artist {
+    position: absolute;
+    margin: 0;
+    left: 50%;
+    top: 40px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    transform: translate(-50%);
+}
+
+.card-button {
+    box-sizing: content-box;
+    position: absolute;
     border-radius: 50%;
-    text-align: center;
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: 50% center;
     transform-origin: center center;
     width: 30px;
     height: 30px;
-    position: absolute;
     font-size: 14px;
-    line-height: 120%;
     color: #FFF;
     background-color: transparent;
-    top: 10px;
-    
+    top: 100px;
     text-decoration: none;
     cursor: pointer;
-    transition: background-color ease 400ms;
-    transition: border ease 1ms;
     transition: transform ease 400ms;
 }
 
-    .buttonCard:hover {
-        color: #FFF;
-        transform: scale(1.1);
-    }
+.card-button:hover {
+    color: #FFF;
+    transform: scale(1.1);
+}
 
-.playCard {
-    margin-left: 40%;
-    margin-top: 35%;
-    background-image: url('/src/elements/icon_play.png');
+.card-heart-button {
+    left: 15px;
+    top: 112px;
+}
+
+.card-play-button {
     border: 1px solid #FFF;
     padding: 12px 12px;
+    left: 40%;
 }
 
-    .playCard:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-        border: 1.7px solid #FFF;
-    }
-
-.plusCard {
-    margin-left: 12%;
-    margin-top: 40%;
-    background-image: url('/src/elements/icon_plus.png');
+.card-play-button:hover {
+    border-width: 1.7px;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-.dotsCard {
-    margin-left: 80%;
-    margin-top: 40%;
-    background-image: url('/src/elements/icon_dots.png');
+.card-dots-button {
+    right: 15px;
+    top: 112px;
 }
 
-.name {
-    text-align: center;
-    width: 200px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 24px;
-    visibility: hidden;
-    font-family: 'Oswald', sans-serif;
-    top: 2px;
-}
-
-.artist {
-    text-align: center;
-    width: 200px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    margin-top: 50px;
-    visibility: hidden;
-    font-family: 'Oswald', sans-serif;
-}
-
-
-    #toggle.on + #menu {
-        opacity: 1;
-        visibility: visible;
-    }
-
-/* menu appearance*/
-#menu {
-    position: absolute;
-    margin-top: 147px;
-    left: 67%;
-    color: white;
-    width: 70px;
-    padding: 10px;
-    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
-    text-align: center;
-    border-radius: 4px;
-    background: white;
-    box-shadow: 0 1px 8px rgba(0,0,0,0.05);
-    /* just for this demo */
-    visibility: hidden;
-    box-sizing: content-box;
-}
-
-    #menu:after {
-        position: absolute;
-        top: -15px;
-        left: 35px;
-        content: "";
-        display: block;
-        border-left: 15px solid transparent;
-        border-right: 15px solid transparent;
-        border-bottom: 20px solid white;
-    }
-
-ul, li, li a {
+ul {
     list-style: none;
-    display: block;
-    margin: 0;
+    color: white;
     padding: 0;
+    margin: 10px 0px;
 }
 
-    li a {
-        padding: 5px;
-        color: #888;
-        text-decoration: none!important;
-    }
+ul li {
+    text-align: center;
+    color: black;
+}
 
-    a:link, a:visited, a:hover, a:active {
-        text-decoration: none;
-    }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 68%;
+    top: 55%;
+}
 
-        li a:hover,
-        li a:focus {
-            background: rgb(60, 65, 64);
-            color: #fff;
-        }
+.dropdown-content a {
+    padding: 10px 16px;
+    color: black;
+    text-decoration: none;
+    display: block;
+
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
