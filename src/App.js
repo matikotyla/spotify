@@ -5,7 +5,7 @@ import Card from './Card';
 function App() {
     return (
         <div>
-            <Card songName="Song Name" songArtist="Song Artist" image="spotify" song="spotify" />
+            <Card songName="Song Name" songArtist="Song Artist" image="spotify.jpg" song="spotify" />
         </div>
     );
 }

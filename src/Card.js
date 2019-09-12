@@ -1,50 +1,47 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Card.css';
 
-class NewCard extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            image: this.props.image,
-            song: this.props.song,
-            hover: false,
-            heart: false,
-            play: true,
-            menu: false
-        }
-    }
+import playSolid from './img/play-solid.svg';
+import pauseSolid from './img/pause-solid.svg';
+import dotsSolid from './img/ellipsis-solid.svg';
+import heartRegular from './img/heart-regular.svg';
+import heartSolid from './img/heart-solid.svg';
 
-    onMouseEnter = () => this.setState({ hover: true })
-    onMouseLeave = () => this.setState({ hover: false })
-    onHeartClick = () => this.setState({ heart: !this.state.heart })
-    onPlayClick = () => this.setState({ play: !this.state.play })
-    onMenuClick = () => this.setState({ menu: !this.state.menu })
+function Card(props) {
+    const [hover, setHover] = useState(false);
+    const [heart, setHeart] = useState(false);
+    const [play, setPlay] = useState(true);
+    const [menu, setMenu] = useState(false);
 
-    render() {
-        return (
-            <div onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} className="card-container" style={{ backgroundImage: `url(/img/${this.state.image}.jpeg)` }}>
-                {
-                    this.state.hover &&
-                    <div className="card-content">
-                        <p className="card-song-name">{this.props.songName}</p>
-                        <p className="card-song-artist">{this.props.songArtist}</p>
-                        <a onClick={this.onHeartClick} className="card-button card-heart-button" style={{backgroundImage: `url(/img/${this.state.heart ? 'heart-solid.svg' : 'heart-regular.svg'})`}}></a>
-                        <a onClick={this.onPlayClick} className="card-button card-play-button" style={{backgroundImage: `url(/img/${this.state.play ? 'icon_play.png' : 'icon_pause.png'})`}}></a>
-                        <div className="dropdown">
-                            <a onClick={this.onMenuClick} id="toggle" className="card-button card-dots-button" style={{backgroundImage: `url(/img/icon_dots.png)`}}></a>
-                            <div className="dropdown-content">
-                                <ul>
-                                    <li><a>Add</a></li>
-                                    <li><a>Edit</a></li>
-                                    <li><a>Delete</a></li>
-                                </ul>
-                            </div>
+    function onMouseEnter() { setHover(true) }
+    function onMouseLeave() { setHover(false) }
+    function onHeartClick() { setHeart(!heart) }
+    function onPlayClick() { setPlay(!play) }
+    function onMenuClick() { setMenu(!menu) }
+
+    return (
+        <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="card-container" style={{ backgroundImage: `url(/img/${props.image})` }}>
+            {
+                hover &&
+                <div className="card-content">
+                    <p className="card-song-name">{props.songName}</p>
+                    <p className="card-song-artist">{props.songArtist}</p>
+                    <a onClick={onHeartClick} className="card-button card-heart-button" style={{backgroundImage: `url(${heart ? heartSolid : heartRegular})`}}></a>
+                    <a onClick={onPlayClick} className="card-button card-play-button" style={{backgroundImage: `url(${play ? playSolid : pauseSolid})`}}></a>
+                    <div className="dropdown">
+                        <a onClick={onMenuClick} id="toggle" className="card-button card-dots-button" style={{backgroundImage: `url(${dotsSolid})`}}></a>
+                        <div className="dropdown-content">
+                            <ul>
+                                <li><a>Add</a></li>
+                                <li><a>Edit</a></li>
+                                <li><a>Delete</a></li>
+                            </ul>
                         </div>
                     </div>
-                }
-            </div>
-        )
-    }
+                </div>
+            }
+        </div>
+    );
 }
 
-export default NewCard;
+export default Card;
